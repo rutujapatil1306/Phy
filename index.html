@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PhysioCare Clinic – Move Better. Live Better.</title>
+<style>
+:root{--bg:#fff;--alt:#f3f8fa;--ink:#0b2545;--mut:#53647a;--teal:#0e9aa7;--card:#fff;--line:#dfe8ee;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1626;--alt:#0f2036;--ink:#eaf2f8;--mut:#9fb2c5;--teal:#2cc4d1;--card:#12263d;--line:#223a55}}
+:root[data-theme="dark"]{--bg:#0a1626;--alt:#0f2036;--ink:#eaf2f8;--mut:#9fb2c5;--teal:#2cc4d1;--card:#12263d;--line:#223a55}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:auto;padding:0 20px}
+section{padding:64px 0}.alt{background:var(--alt)}
+h1,h2,h3{line-height:1.2;margin:0 0 12px}
+h2{font-size:clamp(1.6rem,4vw,2.2rem)}
+.sub{color:var(--mut);max-width:620px;margin:0 0 32px}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:600;border:2px solid var(--teal);cursor:pointer;font-size:1rem;font-family:inherit}
+.btn.p{background:var(--teal);color:#fff}.btn.o{color:var(--teal);background:transparent}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{font-weight:800;font-size:1.15rem}.logo span{color:var(--teal)}
+.links{display:flex;gap:20px;align-items:center;font-size:.95rem}
+.links a:not(.btn){color:var(--mut)}.links .btn{padding:9px 18px;font-size:.9rem}
+@media(max-width:760px){.links a:not(.btn){display:none}}
+.hero{padding:72px 0 64px;background:linear-gradient(135deg,var(--alt),var(--bg))}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,7vw,4rem);letter-spacing:-1px}.hero h1 em{color:var(--teal);font-style:normal}
+.hero p{color:var(--mut);font-size:1.1rem;max-width:480px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.photo{aspect-ratio:1/1;border-radius:28px;background:linear-gradient(160deg,var(--teal),var(--ink));display:grid;place-items:center;color:#fff;text-align:center;padding:20px;font-size:.9rem;opacity:.95}
+.photo b{display:block;font-size:3rem}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.photo{aspect-ratio:16/10}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.card .ic{font-size:1.7rem}.card h3{font-size:1.1rem;margin:8px 0 6px}.card p{margin:0;color:var(--mut);font-size:.95rem}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:center}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.tags span{background:var(--alt);border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:.88rem}
+.quote p{font-style:italic;margin:0 0 12px}.quote small{color:var(--mut)}
+.banner{background:var(--ink);color:#fff;border-radius:24px;padding:40px 28px;text-align:center}
+.banner p{opacity:.8;margin:0 0 20px}
+:root[data-theme="dark"] .banner,:root:not([data-theme="light"]) .banner{background:var(--card)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}
+form .f{grid-column:1/-1}
+label{font-size:.88rem;font-weight:600;display:block;margin-bottom:4px}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--teal);border-color:transparent}
+@media(max-width:600px){form{grid-template-columns:1fr}}
+#ok{display:none;margin-top:14px;padding:14px;border-radius:12px;background:var(--alt);border:1px solid var(--teal)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:760px){.contact{grid-template-columns:1fr}}
+.map{min-height:240px;border-radius:18px;border:1px dashed var(--teal);display:grid;place-items:center;text-align:center;color:var(--mut);padding:20px}
+footer{padding:28px 0;text-align:center;color:var(--mut);font-size:.9rem;border-top:1px solid var(--line)}
+.float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:#25d366;color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:9}
+nav{background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.hero{position:relative;overflow:hidden}.hero .wrap{position:relative;z-index:1}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;animation:fl 9s ease-in-out infinite alternate}
+.b1{width:340px;height:340px;background:var(--teal);top:-80px;right:-60px}.b2{width:260px;height:260px;background:#3b6fd8;bottom:-90px;left:-60px;animation-delay:-4s}
+@keyframes fl{to{transform:translate(30px,40px) scale(1.15)}}
+.hero h1 em{background:linear-gradient(90deg,var(--teal),#3b6fd8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.photo{animation:fl 7s ease-in-out infinite alternate;box-shadow:0 30px 60px -20px rgba(14,154,167,.5)}
+.btn{transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px -8px var(--teal)}
+.card{transition:transform .25s,box-shadow .25s,border-color .25s}.card:hover{transform:translateY(-6px);box-shadow:0 18px 36px -18px rgba(11,37,69,.35);border-color:var(--teal)}
+.stats{margin-top:-36px;position:relative;z-index:2}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 10px;box-shadow:0 20px 40px -24px rgba(11,37,69,.4);text-align:center}
+.stats b{display:block;font-size:clamp(1.5rem,5vw,2.3rem);color:var(--teal)}.stats span{color:var(--mut);font-size:.85rem}
+@media(max-width:600px){.stats .wrap{grid-template-columns:repeat(2,1fr);gap:14px}}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font:inherit;font-size:.9rem}
+.chip.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.vc{cursor:pointer;border-radius:20px;overflow:hidden;background:var(--card);border:1px solid var(--line);transition:transform .25s,box-shadow .25s;padding:0;text-align:left;color:inherit;font:inherit}
+.vc:hover{transform:translateY(-6px);box-shadow:0 18px 36px -18px rgba(11,37,69,.4)}
+.th{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(135deg,var(--ink),var(--teal));position:relative}
+.pl{width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--teal);display:grid;place-items:center;font-size:1.3rem;padding-left:4px;transition:transform .25s}
+.vc:hover .pl{transform:scale(1.15)}
+.vi{padding:14px 16px}.vi small{color:var(--teal);font-weight:600}.vi h3{font-size:1rem;margin:4px 0 0}
+#md{position:fixed;inset:0;background:rgba(5,12,24,.85);z-index:20;display:none;place-items:center;padding:20px}
+#md.on{display:grid}
+#mb{width:min(860px,100%);background:var(--card);border-radius:18px;overflow:hidden}
+#mv{aspect-ratio:16/9;background:#000;display:grid;place-items:center;color:#fff;text-align:center;padding:16px}
+#mv iframe,#mv video{width:100%;height:100%;border:0}
+#mt{padding:12px 16px;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+#mt a{color:var(--teal);font-weight:600}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}details p{color:var(--mut);margin:10px 0 0}
+details[open]{border-color:var(--teal)}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a href="#home" class="logo">Physio<span>Care</span></a>
+<div class="links"><a href="#about">About</a><a href="#treatments">Treatments</a><a href="#videos">Videos</a><a href="#why">Why Us</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><a class="btn p" href="#book">Book Appointment</a></div>
+</div></nav>
+
+<header class="hero" id="home"><div class="blob b1"></div><div class="blob b2"></div><div class="wrap">
+<div>
+<h1>Move Better.<br><em>Live Better.</em></h1>
+<p>Personalized physiotherapy care to help you recover, regain mobility, and return to the activities you love.</p>
+<div class="cta">
+<a class="btn p" href="#book">Book an Appointment</a>
+<a class="btn o" href="tel:+910000000000">📞 Call Now</a>
+<a class="btn o" href="https://wa.me/910000000000" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+</div>
+<div class="photo"><div><b>🏃‍♀️</b>Replace with a professional physiotherapy photo</div></div>
+</div></header>
+<div class="stats rv"><div class="wrap">
+<div><b data-n="10" data-s="+">0</b><span>Years experience</span></div>
+<div><b data-n="5000" data-s="+">0</b><span>Patients treated</span></div>
+<div><b data-n="10" data-s="">0</b><span>Specialised treatments</span></div>
+<div><b data-n="98" data-s="%">0</b><span>Patient satisfaction</span></div>
+</div></div>
+
+<section id="treatments"><div class="wrap">
+<h2>Suffering from pain or stiffness?</h2>
+<p class="sub">Get personalized physiotherapy care from experienced professionals. Choose a treatment to get started.</p>
+<div class="grid" id="tgrid"></div>
+<p style="margin-top:28px"><a class="btn p" href="#book">Book Your Appointment</a></p>
+</div></section>
+
+<section class="alt" id="why"><div class="wrap">
+<h2>Why choose us</h2>
+<p class="sub">Care built around you, not a one-size-fits-all routine.</p>
+<div class="grid">
+<div class="card"><div class="ic">🎯</div><h3>Personalized plans</h3><p>Every treatment plan starts with a detailed assessment of your condition and goals.</p></div>
+<div class="card"><div class="ic">🩺</div><h3>Experienced care</h3><p>Evidence-based techniques from qualified, hands-on physiotherapists.</p></div>
+<div class="card"><div class="ic">🏠</div><h3>Home visits</h3><p>Recover in comfort with physiotherapy at your doorstep.</p></div>
+<div class="card"><div class="ic">📈</div><h3>Visible progress</h3><p>Clear milestones so you always know how your recovery is going.</p></div>
+</div></div></section>
+
+<section id="about"><div class="wrap about">
+<div class="photo" style="aspect-ratio:4/5"><div><b>👩‍⚕️</b>Physiotherapist photo</div></div>
+<div>
+<h2>Meet Dr. [Your Name], PT</h2>
+<p class="sub" style="margin-bottom:8px">BPT / MPT (Specialization) · [X]+ years of experience</p>
+<div class="tags"><span>Orthopaedic</span><span>Sports Injury</span><span>Neuro Rehab</span><span>Post-Surgery</span></div>
+<p>Short paragraph on your approach: assess carefully, explain clearly, treat the cause (not just the pain), and guide patients with exercises they can continue at home.</p>
+<p style="color:var(--mut)"><b>Certifications:</b> [Add certifications, e.g. Manual Therapy, Dry Needling, Kinesio Taping]</p>
+</div></div></section>
+
+<section id="videos"><div class="wrap">
+<h2>Exercise &amp; Education Videos</h2>
+<p class="sub">Watch guided exercises and learn about common conditions. Tap any video to play.</p>
+<div class="chips" id="chips"></div>
+<div class="grid" id="vgrid"></div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<h2>What our patients say</h2><p class="sub">Replace these samples with real patient feedback.</p>
+<div class="grid">
+<div class="card quote"><p>“My back pain of two years improved within weeks. I'm back to my daily walks.”</p><small>— Patient name, Back Pain</small></div>
+<div class="card quote"><p>“Excellent post-surgery rehab. Clear exercises and great support.”</p><small>— Patient name, Knee Rehab</small></div>
+<div class="card quote"><p>“Friendly, professional, and genuinely cares about recovery.”</p><small>— Patient name, Shoulder Pain</small></div>
+</div></div></section>
+
+<section class="alt" id="faq"><div class="wrap" style="max-width:760px">
+<h2>Frequently asked questions</h2><p class="sub">Quick answers before you book.</p>
+<details><summary>Do I need a doctor's referral?</summary><p>No. You can book directly; we will assess your condition on the first visit.</p></details>
+<details><summary>How long is a session?</summary><p>Usually 30–45 minutes, depending on your treatment plan.</p></details>
+<details><summary>How many sessions will I need?</summary><p>It depends on your condition. After the first assessment we share a clear plan.</p></details>
+<details><summary>Do you offer home visits?</summary><p>Yes, home physiotherapy is available. Select it in the booking form.</p></details>
+</div></section>
+
+<section id="book"><div class="wrap" style="max-width:760px">
+<h2>Book an Appointment</h2>
+<p class="sub">Fill in your details. Your request opens in WhatsApp (or email) so the clinic receives it instantly.</p>
+<form id="f">
+<div><label for="n">Patient name *</label><input id="n" required></div>
+<div><label for="m">Mobile number *</label><input id="m" type="tel" required pattern="[0-9+ ]{10,15}"></div>
+<div class="f"><label for="e">Email</label><input id="e" type="email"></div>
+<div class="f"><label for="t">Select treatment *</label><select id="t" required></select></div>
+<div><label for="d">Preferred date *</label><input id="d" type="date" required></div>
+<div><label for="tm">Preferred time *</label><input id="tm" type="time" required></div>
+<div class="f"><label for="p">Message / problem</label><textarea id="p" rows="3"></textarea></div>
+<div class="f" style="display:flex;gap:12px;flex-wrap:wrap">
+<button class="btn p" type="submit">Book via WhatsApp</button>
+<button class="btn o" type="button" id="mail">Send by Email</button>
+</div>
+</form>
+<div id="ok">✅ Thank you! Your request is ready to send. If WhatsApp didn't open, tap the button again or call us.</div>
+</div></section>
+
+<section class="alt" id="contact"><div class="wrap">
+<h2>Contact &amp; Location</h2><p class="sub">Visit the clinic or reach us directly.</p>
+<div class="contact">
+<div>
+<p>📞 <a href="tel:+910000000000">+91 00000 00000</a></p>
+<p>💬 <a href="https://wa.me/910000000000">WhatsApp us</a></p>
+<p>✉️ <a href="mailto:clinic@example.com">clinic@example.com</a></p>
+<p>📍 [Clinic address, City, State]</p>
+<p>🕘 Mon–Sat: 9:00 AM – 7:00 PM<br>Sunday: By appointment</p>
+<a class="btn p" href="#book">Book an Appointment</a>
+</div>
+<div class="map">Paste your Google Maps link here, e.g. a “Get Directions” button to your clinic location.</div>
+</div></div></section>
+
+<footer>© 2026 PhysioCare Clinic · All rights reserved</footer>
+<a class="float" href="https://wa.me/910000000000" target="_blank" rel="noopener">💬 WhatsApp</a>
+
+<div id="md"><div id="mb"><div id="mv"></div><div id="mt"><b id="mn"></b><span><a id="ml" href="#" target="_blank" rel="noopener">Watch on YouTube</a> &nbsp; <button class="chip" id="mx">Close ✕</button></span></div></div></div>
+<script>
+var T=[["🦴","Back & Neck Pain","Relief from stiffness, disc and posture-related pain."],["🦵","Knee Pain","Treatment for strain, wear, and recovery after injury."],["⚽","Sports Injuries","Rehab and return-to-play programs."],["🤝","Arthritis Management","Reduce pain and keep joints moving."],["🏥","Post-Surgery Rehabilitation","Guided recovery after orthopaedic surgery."],["🧠","Stroke Rehabilitation","Rebuild strength, balance, and independence."],["💪","Shoulder Pain","Frozen shoulder, rotator cuff, and more."],["🔧","Joint & Muscle Pain","Targeted therapy for everyday aches."],["🧍","Posture Correction","Fix desk-job and lifestyle posture issues."],["🏠","Home Physiotherapy","Expert care at your home."]];
+var g=document.getElementById("tgrid"),s=document.getElementById("t");
+s.innerHTML='<option value="">Choose…</option>';
+T.forEach(function(x){g.insertAdjacentHTML("beforeend",'<a href="#book" class="card" data-t="'+x[1]+'"><div class="ic">'+x[0]+'</div><h3>'+x[1]+'</h3><p>'+x[2]+'</p></a>');var o=document.createElement("option");o.textContent=x[1];s.appendChild(o)});
+g.addEventListener("click",function(e){var c=e.target.closest(".card");if(c)s.value=c.dataset.t});
+var d=document.getElementById("d");d.min=new Date().toISOString().slice(0,10);
+function msg(){var v=function(i){return document.getElementById(i).value};
+return "New appointment request%0A"+["Name: "+v("n"),"Mobile: "+v("m"),"Email: "+v("e"),"Treatment: "+v("t"),"Date: "+v("d"),"Time: "+v("tm"),"Problem: "+v("p")].map(encodeURIComponent).join("%0A")}
+var f=document.getElementById("f");
+f.addEventListener("submit",function(e){e.preventDefault();window.open("https://wa.me/910000000000?text="+msg(),"_blank");document.getElementById("ok").style.display="block"});
+document.getElementById("mail").addEventListener("click",function(){if(!f.reportValidity())return;location.href="mailto:clinic@example.com?subject="+encodeURIComponent("Appointment request")+"&body="+msg();document.getElementById("ok").style.display="block"});
+
+/* VIDEOS: add your YouTube video ID as id:"xxxx" or your own file as src:"videos/file.mp4" */
+var V=[{t:"5 exercises for lower back pain",c:"Back & Neck",id:""},{t:"Neck stretches for desk workers",c:"Back & Neck",id:""},{t:"Knee strengthening basics",c:"Knee",id:""},{t:"Frozen shoulder mobility routine",c:"Shoulder",id:""},{t:"Posture correction at your desk",c:"Posture",id:""},{t:"Post-surgery rehab: first steps",c:"Rehab",id:""}];
+var cats=["All"].concat(V.map(function(v){return v.c}).filter(function(c,i,a){return a.indexOf(c)==i}));
+var ch=document.getElementById("chips"),vg=document.getElementById("vgrid");
+function rv(f){vg.innerHTML="";V.forEach(function(v,i){if(f!="All"&&v.c!=f)return;vg.insertAdjacentHTML("beforeend",'<button class="vc" data-i="'+i+'"><div class="th"><div class="pl">▶</div></div><div class="vi"><small>'+v.c+'</small><h3>'+v.t+'</h3></div></button>')})}
+cats.forEach(function(c,i){ch.insertAdjacentHTML("beforeend",'<button class="chip'+(i?"":" on")+'">'+c+'</button>')});
+ch.addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b)return;[].forEach.call(ch.children,function(x){x.classList.remove("on")});b.classList.add("on");rv(b.textContent)});
+rv("All");
+var md=document.getElementById("md"),mv=document.getElementById("mv");
+function cl(){md.classList.remove("on");mv.innerHTML=""}
+vg.addEventListener("click",function(e){var b=e.target.closest(".vc");if(!b)return;var v=V[b.dataset.i];document.getElementById("mn").textContent=v.t;var l=document.getElementById("ml");
+if(v.src){mv.innerHTML='<video controls autoplay src="'+v.src+'"></video>';l.style.display="none"}
+else if(v.id){mv.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+v.id+'?autoplay=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';l.href="https://www.youtube.com/watch?v="+v.id;l.style.display=""}
+else{mv.innerHTML="<div>🎬<br>Video coming soon.<br><small>Add a YouTube ID or MP4 in the <code>V</code> list to enable playback.</small></div>";l.style.display="none"}
+md.classList.add("on")});
+document.getElementById("mx").onclick=cl;md.addEventListener("click",function(e){if(e.target==md)cl()});document.addEventListener("keydown",function(e){if(e.key=="Escape")cl()});
+/* scroll reveal + counters */
+document.querySelectorAll("section .wrap>*").forEach(function(el){el.classList.add("rv")});
+function cnt(el){var n=+el.dataset.n,t=0,st=el.dataset.s;var k=setInterval(function(){t+=n/40;if(t>=n){t=n;clearInterval(k)}el.textContent=Math.round(t).toLocaleString()+st},30)}
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");x.target.querySelectorAll("[data-n]").forEach(cnt);io.unobserve(x.target)}})},{threshold:.12});document.querySelectorAll(".rv").forEach(function(el){io.observe(el)})}else{document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in")});document.querySelectorAll("[data-n]").forEach(cnt)}
+</script>
+</body>
+</html>
